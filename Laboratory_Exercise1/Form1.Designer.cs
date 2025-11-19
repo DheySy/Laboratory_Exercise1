@@ -1,6 +1,6 @@
 ﻿namespace Laboratory_Exercise1
 {
-    partial class Form1
+    partial class FrmClubRegistration
     {
         /// <summary>
         /// Required designer variable.
@@ -66,13 +66,13 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(77, 324);
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(78, 340);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 19);
+            this.label8.Size = new System.Drawing.Size(152, 19);
             this.label8.TabIndex = 38;
-            this.label8.Text = "Birthday:";
+            this.label8.Text = "List of Club Members";
             // 
             // label9
             // 
@@ -228,10 +228,11 @@
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // FrmClubRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1101, 684);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
@@ -250,7 +251,7 @@
             this.Controls.Add(this.cbPrograms);
             this.Controls.Add(this.txtStudentNo);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "FrmClubRegistration";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

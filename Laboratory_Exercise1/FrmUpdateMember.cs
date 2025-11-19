@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Laboratory_Exercise1
 {
-    public partial class FrmClubRegistration : Form
+    public partial class FrmUpdateMember : Form
     {
-        public FrmClubRegistration()
+        public FrmUpdateMember()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
