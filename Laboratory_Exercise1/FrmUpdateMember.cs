@@ -15,11 +15,11 @@ namespace Laboratory_Exercise1
     {
         private int memberID;
         private ClubRegistrationQuery query = new ClubRegistrationQuery();
-      
-        public FrmUpdateMember()
+
+        public FrmUpdateMember(int id)
         {
             InitializeComponent();
-            memberID = 0;
+            memberID = id;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,4 +67,5 @@ namespace Laboratory_Exercise1
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+    }
 }

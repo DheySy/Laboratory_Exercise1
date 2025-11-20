@@ -96,5 +96,16 @@ namespace Laboratory_Exercise1
         {
             RefreshListOfClubMembers(); 
         }
+
+        private void ClearInputs()
+        {
+            txtStudentNo.Clear();
+            txtFirstName.Clear();
+            txtMiddleInitial.Clear();
+            txtLastName.Clear();
+            txtAge.Clear();
+            cbGender.SelectedIndex = -1;
+            cbPrograms.SelectedIndex = -1;
+        }
     }
 }
