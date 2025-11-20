@@ -44,8 +44,9 @@
             this.txtStudentNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +109,7 @@
             // txtMiddleInitial
             // 
             this.txtMiddleInitial.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMiddleInitial.Location = new System.Drawing.Point(704, 190);
+            this.txtMiddleInitial.Location = new System.Drawing.Point(638, 186);
             this.txtMiddleInitial.Margin = new System.Windows.Forms.Padding(2);
             this.txtMiddleInitial.Name = "txtMiddleInitial";
             this.txtMiddleInitial.Size = new System.Drawing.Size(267, 26);
@@ -118,7 +119,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(700, 169);
+            this.label5.Location = new System.Drawing.Point(634, 165);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 19);
@@ -128,7 +129,7 @@
             // txtFirstName
             // 
             this.txtFirstName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(393, 190);
+            this.txtFirstName.Location = new System.Drawing.Point(327, 186);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(287, 26);
@@ -138,7 +139,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(390, 169);
+            this.label4.Location = new System.Drawing.Point(324, 165);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 19);
@@ -148,7 +149,7 @@
             // txtLastName
             // 
             this.txtLastName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(81, 190);
+            this.txtLastName.Location = new System.Drawing.Point(15, 186);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(267, 26);
@@ -158,7 +159,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(77, 169);
+            this.label3.Location = new System.Drawing.Point(11, 165);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 19);
@@ -169,7 +170,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(700, 75);
+            this.label2.Location = new System.Drawing.Point(391, 74);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 19);
@@ -184,7 +185,7 @@
             "BS in Information Technology",
             "BS in Computer Science",
             "BS in Multimedia Arts"});
-            this.cbPrograms.Location = new System.Drawing.Point(703, 97);
+            this.cbPrograms.Location = new System.Drawing.Point(394, 96);
             this.cbPrograms.Margin = new System.Windows.Forms.Padding(2);
             this.cbPrograms.Name = "cbPrograms";
             this.cbPrograms.Size = new System.Drawing.Size(266, 27);
@@ -218,15 +219,38 @@
             this.dataGridView1.Size = new System.Drawing.Size(738, 197);
             this.dataGridView1.TabIndex = 41;
             // 
-            // button1
+            // btnRefresh
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(833, 362);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 43);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRefresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Location = new System.Drawing.Point(833, 362);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(138, 43);
+            this.btnRefresh.TabIndex = 42;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Location = new System.Drawing.Point(937, 62);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(124, 42);
+            this.btnRegister.TabIndex = 43;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(937, 135);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(124, 40);
+            this.btnUpdate.TabIndex = 44;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // FrmClubRegistration
             // 
@@ -234,7 +258,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1101, 684);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.label8);
@@ -278,8 +304,9 @@
         private System.Windows.Forms.TextBox txtStudentNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 
