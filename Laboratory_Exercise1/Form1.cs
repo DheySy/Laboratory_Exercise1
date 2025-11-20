@@ -80,7 +80,7 @@ namespace Laboratory_Exercise1
         {
             if (dataGridView1.CurrentRow != null)
             {
-                int selectedID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
+                int selectedID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value.ToString());
                 FrmUpdateMember updateForm = new FrmUpdateMember(selectedID);
                 updateForm.FormClosed += UpdateForm_FormClosed;
                 updateForm.Show();

@@ -19,8 +19,8 @@ namespace Laboratory_Exercise1
         public DataTable dataTable = new DataTable();
         public BindingSource bindingSource = new BindingSource();
 
-        private string connectionString = 
-        @"Data Source=(LocalDB)MSSQLLocalDB;AttachedFilename=D:\Visual Studio\Laboratory_Exercise1\ClubDB.mdf;Integrated Security=True";
+        private string connectionString =
+    @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Public\Documents\Visual Studio\repos\Laboratory_Exercise1\ClubDB.mdf;Integrated Security=True;";
 
         public string _FirstName, _MiddleName, _LastName, _Gender, _Program;
         public int _Age;
@@ -30,11 +30,12 @@ namespace Laboratory_Exercise1
             
             dataTable = new DataTable();
             bindingSource = new BindingSource();
+            sqlConnect = new SqlConnection(connectionString);
         }
 
         public bool DisplayList()
         {
-            string clubMembersView = "SELECT StudnetID, FirstName, MiddleName, LastName, Age, Gender, Program FROM ClubMembers";
+            string clubMembersView = "SELECT ID, StudentID, FirstName, MiddleName, LastName, Age, Gender, Program FROM ClubMembers";
             sqlAdapter = new SqlDataAdapter(clubMembersView, sqlConnect);
             dataTable.Clear();
             sqlAdapter.Fill(dataTable);
@@ -66,12 +67,15 @@ namespace Laboratory_Exercise1
             sqlCommand = new SqlCommand("UPDATE ClubMembers SET StudentID=@StudentID, FirstName=@FirstName, MiddleName=@MiddleName," +
                 " LastName=@LastName, Age=@Age, Gender=@Gender, Program=@Program WHERE ID=@ID", sqlConnect);
             sqlCommand.Parameters.Add("@StudentID", SqlDbType.BigInt).Value = StudentID;
-            sqlCommand.Parameters.Add("@FirstName", SqlDbType.NVarChar, 50).Value = FirstName;
-            sqlCommand.Parameters.Add("@MiddleName", SqlDbType.NVarChar, 50).Value = MiddleName;
-            sqlCommand.Parameters.Add("@LastName", SqlDbType.NVarChar, 50).Value = LastName;
+            sqlCommand.Parameters.Add("@FirstName", SqlDbType.NVarChar, 50).Value = FirstName ?? (object)DBNull.Value;
+            sqlCommand.Parameters.Add("@MiddleName", SqlDbType.NVarChar, 50).Value = MiddleName ?? (object)DBNull.Value;
+            sqlCommand.Parameters.Add("@LastName", SqlDbType.NVarChar, 50).Value = LastName ?? (object)DBNull.Value;
             sqlCommand.Parameters.Add("@Age", SqlDbType.Int).Value = Age;
-            sqlCommand.Parameters.Add("@Gender", SqlDbType.NVarChar, 10).Value = Gender;
-            sqlCommand.Parameters.Add("@Program", SqlDbType.NVarChar, 50).Value = Program;
+            sqlCommand.Parameters.Add("@Gender", SqlDbType.NVarChar, 10).Value = Gender ?? (object)DBNull.Value;
+            sqlCommand.Parameters.Add("@Program", SqlDbType.NVarChar, 50).Value = Program ?? (object)DBNull.Value;
+
+           
+            sqlCommand.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
 
             sqlConnect.Open();
             sqlCommand.ExecuteNonQuery();
