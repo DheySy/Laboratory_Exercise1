@@ -19,15 +19,15 @@ namespace Laboratory_Exercise1
         public DataTable dataTable = new DataTable();
         public BindingSource bindingSource = new BindingSource();
 
-        private string connectionString;
+        private string connectionString = 
+        @"Data Source=(LocalDB)MSSQLLocalDB;AttachedFilename=D:\Visual Studio\Laboratory_Exercise1\ClubDB.mdf;Integrated Security=True";
 
         public string _FirstName, _MiddleName, _LastName, _Gender, _Program;
         public int _Age;
 
         public ClubRegistrationQuery()
         {
-            connectionString = @"Data Source=(LocalDB)MSSQLLocalDB;AttachedFilename=D:\Visual Studio\Laboratory_Exercise1\ClubDB.mdf;Integrated Security=True";
-            sqlConnect = new SqlConnection(connectionString);
+            
             dataTable = new DataTable();
             bindingSource = new BindingSource();
         }
